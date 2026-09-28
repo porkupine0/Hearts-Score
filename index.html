@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hearts">
+<meta name="theme-color" content="#121012">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>Hearts Scorekeeper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;600;700&display=swap">
+<style>
+/* A committed card-table look: black and red in every theme */
+:root{
+  color-scheme:dark;
+  --bg:#121012; --surface:#1c181b; --surface-2:#272126; --ink:#f4eeee; --muted:#b3a5aa; --line:#3a3036;
+  --accent:#e23a4e; --accent-ink:#ffffff; --gold:#e8b949; --good:#6fd1a0;
+  --lead:#2d1a1f; --warn:#ffb25b; --warn-bg:#3a2513; --err:#ff8a8a; --err-bg:#3b1c1f;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.45 "Figtree",system-ui,sans-serif;padding-inline:16px;padding-block:18px 48px}
+.wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1,h2{font-family:"Bricolage Grotesque","Figtree",system-ui,sans-serif;margin:0;text-wrap:balance}
+h1{font-size:30px;font-weight:800;letter-spacing:-.01em}
+h2{font-size:19px;font-weight:600}
+.num{font-variant-numeric:tabular-nums}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo svg{width:38px;height:38px;flex:none}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:14px}
+button,select{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);padding:10px 14px;font-weight:600}
+button:disabled{opacity:.4;cursor:default}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-size:17px;padding:14px}
+.ghost{background:transparent}
+.small{padding:6px 10px;font-size:14px}
+.danger{color:var(--err);border-color:var(--err);background:transparent}
+.row{display:flex;align-items:center;gap:10px}
+.grow{flex:1;min-width:0}
+input[type=text],select{font:inherit;width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.hint{font-size:14px;color:var(--muted);margin:0}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap}
+.btnrow>*{flex:1}
+.r{color:var(--accent)}
+.lbl{font-size:13px;font-weight:700;color:var(--muted)}
+
+/* standings */
+.players{display:flex;flex-direction:column;gap:8px}
+.pl{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:4px 12px;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.pl.lead{background:var(--lead);border-color:var(--accent)}
+.rank{font-weight:800;color:var(--muted);text-align:center;font-size:18px}
+.pl.lead .rank{color:var(--accent)}
+.pn{font-weight:800;font-size:17px;overflow-wrap:anywhere}
+.score{font-family:"Bricolage Grotesque",sans-serif;font-size:34px;font-weight:800;text-align:right;line-height:1;grid-row:1 / 3;grid-column:3}
+.gap{font-size:13px;font-weight:700;color:var(--muted);grid-column:2}
+.pl.lead .gap{color:var(--accent)}
+.meter{grid-column:1 / 4;height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden;margin-top:4px}
+.meter span{display:block;height:100%;background:var(--accent)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--warn-bg);color:var(--warn);margin-left:6px;vertical-align:1px}
+
+/* passing banner */
+.pass{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:center;padding:16px;border-radius:14px;background:var(--accent);color:var(--accent-ink)}
+.pass.hold{background:var(--surface-2);color:var(--ink)}
+.pass .arrow{grid-row:1 / 3;font-size:40px;line-height:1;font-weight:800}
+.pass .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:22px}
+.pass .meta{font-size:14px;opacity:.9}
+
+/* entry */
+.erow{display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.erow:last-child{border-bottom:0}
+.erow .who{font-weight:700;overflow-wrap:anywhere}
+.erow .auto{font-size:12px;font-weight:700;color:var(--gold);margin-left:6px}
+.erow input{width:84px;text-align:center;font-size:20px;font-weight:700}
+.erow input.autofilled{border:2px dashed var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{padding:9px 14px;border-radius:999px;font-size:15px}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.sumline{font-size:14px;font-weight:700;padding:10px 12px;border-radius:10px;background:var(--surface-2)}
+.sumline.ok{background:var(--lead);color:var(--good)}
+.sumline.bad{background:var(--err-bg);color:var(--err)}
+.err{background:var(--err-bg);color:var(--err);padding:10px 12px;border-radius:10px;font-weight:600;font-size:14px}
+.moonbox{display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:12px;border:1px dashed var(--gold)}
+.moonbox .t{font-weight:800;color:var(--gold)}
+
+/* history */
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:8px 6px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+th:first-child,td:first-child{text-align:left}
+td.hd button{padding:4px 10px;font-size:14px}
+tfoot td{font-weight:800;border-bottom:0}
+.q{color:var(--gold);font-weight:800;margin-left:3px}
+.moon{color:var(--gold);font-weight:800}
+.legend{font-size:13px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}
+
+/* stats */
+.hl{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.aw{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--bg);display:flex;flex-direction:column;gap:2px}
+.aw .an{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:800}
+.aw .ah{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px;overflow-wrap:anywhere}
+.aw .ad{font-size:13px;color:var(--muted)}
+@media (max-width:380px){.hl{grid-template-columns:1fr}}
+
+.banner{background:var(--accent);color:var(--accent-ink);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.banner h2{font-size:26px;font-weight:800}
+.banner button{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+details.rules{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+details.rules summary{cursor:pointer;font-weight:700}
+.rulelist{font-size:14px;margin:10px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+</style>
+<style>body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<div class="wrap" id="app"></div>
+
+<script>
+const KEY = "hearts-scorekeeper-v1";
+const LIMIT = 100, DANGER = 25;
+const PASS = [{d:"left",a:"←"},{d:"right",a:"→"},{d:"across",a:"↑"},{d:null,a:"✋"}];
+const LOGO = `<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#0b090b" stroke="#3a3036" stroke-width="3"/><path transform="translate(20 22) scale(.6)" d="M50 92 C 20 66, 4 50, 4 30 C 4 14, 16 4, 30 4 C 40 4, 47 10, 50 18 C 53 10, 60 4, 70 4 C 84 4, 96 14, 96 30 C 96 50, 80 66, 50 92 Z" fill="#e23a4e"/></svg>`;
+
+let state = load() || { phase:"setup", names:["","","",""], firstDealer:0, players:[], dealer0:0, hands:[] };
+let entry = null;
+let confirmKey = null, confirmTimer = null;
+
+function load(){ try{ const s = localStorage.getItem(KEY); return s ? JSON.parse(s) : null; }catch(e){ return null; } }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pname = i => (state.names[i]||"").trim() || `Player ${i+1}`;
+const N = i => esc(state.players[i]);
+
+function totalsAfter(k){ const t = [0,0,0,0]; state.hands.slice(0,k).forEach(h => h.pts.forEach((v,i)=> t[i]+=v)); return t; }
+const over = t => t.some(v => v >= LIMIT);
+const dealerOf = h => (state.dealer0 + h) % 4;
+
+function confirmThen(key, fn){
+  if (confirmKey === key){ clearTimeout(confirmTimer); confirmKey = null; fn(); return; }
+  confirmKey = key; render();
+  clearTimeout(confirmTimer);
+  confirmTimer = setTimeout(()=>{ confirmKey = null; render(); }, 3500);
+}
+let wakeLock = null;
+async function keepAwake(){
+  try{ if (state.phase === "play" && "wakeLock" in navigator && document.visibilityState === "visible" && !wakeLock){
+    wakeLock = await navigator.wakeLock.request("screen"); wakeLock.addEventListener("release", ()=>{ wakeLock = null; });
+  }}catch(e){ wakeLock = null; }
+}
+document.addEventListener("visibilitychange", keepAwake);
+
+function render(){
+  const app = document.getElementById("app");
+  const focusId = document.activeElement && document.activeElement.id;
+  app.innerHTML = state.phase === "setup" ? setupView() : playView();
+  if (focusId){ const el = document.getElementById(focusId); if (el) el.focus({preventScroll:true}); }
+}
+function header(extra=""){ return `<div class="brand"><div class="logo">${LOGO}<h1>Hearts</h1></div>${extra}</div>`; }
+
+function setupView(){
+  const opts = [0,1,2,3].map(i=>`<option value="${i}" ${i===state.firstDealer?"selected":""}>${esc(pname(i))}</option>`).join("");
+  return header() + `
+  <div class="panel">
+    <div class="eyebrow">Four players, in seating order going left</div>
+    ${[0,1,2,3].map(i=>`<input type="text" id="name-${i}" data-name="${i}" placeholder="Player ${i+1}" value="${esc(state.names[i]||"")}" maxlength="16" autocomplete="off" aria-label="Player ${i+1}">`).join("")}
+    <label class="lbl" for="first-dealer">First dealer</label>
+    <select id="first-dealer">${opts}</select>
+    <button class="primary" data-act="start" id="start">Start game</button>
+  </div>
+  <p class="hint">Hearts are 1 point each and the Queen of Spades is 13. Shoot the moon and everyone else takes 26. When anyone reaches 100, the lowest score wins.</p>`;
+}
+
+function playView(){
+  const n = state.hands.length, t = totalsAfter(n), done = over(t), has = n > 0;
+  const low = Math.min(...t);
+  const order = [0,1,2,3].sort((a,b)=> t[a]-t[b] || a-b);
+  const rank = i => 1 + t.filter(v => v < t[i]).length;
+
+  let top = "";
+  if (done){
+    const winners = order.filter(i => t[i] === low);
+    top = `<div class="banner"><div class="eyebrow" style="color:inherit;opacity:.85">Game over · ${n} hands</div>
+      <h2>${winners.length>1?`Tie game: ${winners.map(N).join(" &amp; ")}`:`${N(winners[0])} wins`} with ${low}</h2>
+      <div class="num">${order.filter(i=>t[i]!==low).map(i=>`${N(i)} ${t[i]}`).join(" · ")}</div>
+      <div class="btnrow"><button data-act="rematch" id="rematch">Rematch</button><button data-act="newsetup" id="newsetup2">New players</button></div></div>`;
+  }
+
+  const players = order.map(i => {
+    const lead = has && t[i] === low;
+    let gap = "";
+    if (has){
+      if (lead){ const others = t.filter(v=>v!==low); gap = t.filter(v=>v===low).length>1 ? "Tied for the lead" : `Leads by ${Math.min(...others) - low}`; }
+      else {
+        const ahead = t.filter(v => v < t[i]), nearest = Math.max(...ahead);
+        gap = `${t[i]-low} behind the lead`;
+        if (nearest !== low){ const who = order.find(j=>t[j]===nearest); gap += ` · ${t[i]-nearest} behind ${N(who)}`; }
+      }
+    }
+    const danger = !done && LIMIT - t[i] <= DANGER && t[i] < LIMIT ? `<span class="tag num">${LIMIT - t[i]} from 100</span>` : "";
+    return `<div class="pl ${lead?"lead":""}">
+      <span class="rank num">${has?rank(i):"–"}</span>
+      <span class="pn">${N(i)}${danger}</span>
+      <span class="score num">${t[i]}</span>
+      ${gap?`<span class="gap num">${gap}</span>`:""}
+      <div class="meter" aria-hidden="true"><span style="width:${Math.min(100,t[i])}%"></span></div>
+    </div>`;
+  }).join("");
+
+  let handBlock = "";
+  const hIdx = entry && entry.editing != null ? entry.editing : n;
+  if (!done || entry){
+    const p = PASS[hIdx % 4];
+    handBlock = `<div class="pass ${p.d?"":"hold"}"><span class="arrow" aria-hidden="true">${p.a}</span>
+      <span class="big">${p.d?`Pass 3 cards ${p.d.toUpperCase()}`:"No passing this hand"}</span>
+      <span class="meta">Hand ${hIdx+1} · ${N(dealerOf(hIdx))} deals · 2♣ leads</span></div>`;
+    handBlock += entry ? entryView(hIdx) : `<button class="primary" data-act="newHand" id="newHand">Score hand ${n+1}</button>`;
+  }
+
+  let history = "";
+  if (has){
+    const run = [0,0,0,0];
+    const body = state.hands.map((h,hi) => {
+      h.pts.forEach((v,i)=> run[i]+=v);
+      return `<tr><td class="hd"><button id="edit-${hi}" data-act="edit" data-i="${hi}" aria-label="Edit hand ${hi+1}">${hi+1}</button></td>${h.pts.map((v,i)=>`<td>${h.moon===i?`<span class="moon">🌙 0</span>`:v}${h.queen===i&&h.moon==null?`<span class="q">Q♠</span>`:""}</td>`).join("")}</tr>`;
+    }).join("");
+    history = `<div class="panel">
+      <div class="row"><h2 class="grow">Hands</h2><button class="small" data-act="undo" id="undo">${confirmKey==="undo"?"Tap to confirm":"Undo last"}</button></div>
+      <div class="tablewrap"><table><thead><tr><th>Hand</th>${[0,1,2,3].map(i=>`<th>${N(i)}</th>`).join("")}</tr></thead>
+      <tbody>${body}</tbody><tfoot><tr><td>Total</td>${t.map(v=>`<td>${v}</td>`).join("")}</tr></tfoot></table></div>
+      <div class="legend"><span><span class="q">Q♠</span> took the Queen</span><span><span class="moon">🌙</span> shot the moon</span><span>Tap a hand number to fix it</span></div>
+    </div>` + statsView();
+  }
+
+  const reset = `<button class="small ghost" data-act="newgame" id="newgame">${confirmKey==="new"?"Tap to confirm":"New game"}</button>`;
+  return header(reset) + top + `<div class="players">${players}</div>` + handBlock + history +
+    `<details class="rules"><summary>Rules</summary><ul class="rulelist">
+      <li>Each heart is 1 point. The Queen of Spades is 13. Every hand adds up to 26.</li>
+      <li>Shoot the moon (every heart and the Queen) and everyone else takes 26.</li>
+      <li>Passing goes left, right, across, then no pass, and repeats.</li>
+      <li>When anyone reaches 100, the lowest score wins. A tie for lowest is a tie game.</li></ul></details>
+    <p class="hint">Your game is kept on this device, and the screen stays on while you play.</p>`;
+}
+
+function statsView(){
+  const H = state.hands, n = H.length;
+  const queens = [0,0,0,0], moons = [0,0,0,0], clean = [0,0,0,0], won = [0,0,0,0];
+  let worst = {v:-1, list:[]};
+  H.forEach((h,hi) => {
+    if (h.moon != null) moons[h.moon]++; else if (h.queen != null) queens[h.queen]++;
+    const m = Math.min(...h.pts);
+    h.pts.forEach((v,i) => {
+      if (v === 0 && h.moon !== i) clean[i]++;
+      if (v === m) won[i]++;
+      if (h.moon == null){ if (v > worst.v) worst = {v, list:[[i,hi]]}; else if (v === worst.v) worst.list.push([i,hi]); }
+    });
+  });
+  const top = arr => { const m = Math.max(...arr); return { m, who: arr.map((v,i)=>i).filter(i=>arr[i]===m) }; };
+  const names = idx => idx.map(N).join(", ");
+  const q = top(queens), mo = top(moons), c = top(clean);
+  const t = totalsAfter(n);
+  const hl = [
+    `<div class="aw"><span class="an">Queen magnet</span><span class="ah">${q.m?names(q.who):"Nobody yet"}</span><span class="ad">${q.m?`Took the Queen ${q.m} time${q.m>1?"s":""}`:"The Queen is still loose"}</span></div>`,
+    `<div class="aw"><span class="an">Moonwalker</span><span class="ah">${mo.m?names(mo.who):"Nobody yet"}</span><span class="ad">${mo.m?`Shot the moon ${mo.m} time${mo.m>1?"s":""}`:"No moons shot"}</span></div>`,
+    `<div class="aw"><span class="an">Clean hands</span><span class="ah">${c.m?names(c.who):"Nobody yet"}</span><span class="ad">${c.m?`${c.m} hand${c.m>1?"s":""} with 0 points`:"Everyone's taken something"}</span></div>`,
+    `<div class="aw"><span class="an">Ouch</span><span class="ah">${worst.v>0?names([...new Set(worst.list.map(x=>x[0]))]):"Nobody yet"}</span><span class="ad">${worst.v>0?`${worst.v} points in hand ${worst.list.map(x=>x[1]+1).join(", ")}`:""}</span></div>`,
+  ].join("");
+  const rows = [0,1,2,3].map(i=>`<tr><td>${N(i)}</td><td>${queens[i]}</td><td>${moons[i]}</td><td>${clean[i]}</td><td>${won[i]}</td><td>${(t[i]/n).toFixed(1)}</td></tr>`).join("");
+  return `<div class="panel">
+    <h2>Stats</h2>
+    <div class="hl">${hl}</div>
+    <div class="tablewrap"><table><thead><tr><th>Player</th><th>Q♠</th><th>Moons</th><th>Clean</th><th>Low hand</th><th>Avg</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="hint">Low hand counts hands where a player had the fewest points, ties included.</p>
+  </div>`;
+}
+
+function entryView(hIdx){
+  let body;
+  if (entry.moon != null){
+    body = `<div class="moonbox"><span class="t">🌙 ${N(entry.moon)} shot the moon</span>
+      <span class="hint">${N(entry.moon)} takes 0. Everyone else takes 26.</span>
+      <div class="chips">${[0,1,2,3].map(i=>`<button class="chip" id="moon-${i}" data-act="moonWho" data-i="${i}" aria-pressed="${entry.moon===i}">${N(i)}</button>`).join("")}</div>
+      <button class="small" data-act="noMoon" id="noMoon">Nobody shot the moon</button></div>`;
+  } else {
+    const rows = [0,1,2,3].map(i => `<div class="erow"><label class="who" for="pts-${i}">${N(i)}${entry.auto===i?`<span class="auto">auto</span>`:""}</label>
+      <input type="text" inputmode="numeric" id="pts-${i}" data-pts="${i}" class="${entry.auto===i?"autofilled":""}" value="${esc(entry.raw[i])}" placeholder="–" autocomplete="off"></div>`).join("");
+    body = `<div>${rows}</div>
+      <div><div class="eyebrow" style="margin-bottom:8px">Who took the Queen of Spades?</div>
+      <div class="chips">${[0,1,2,3].map(i=>`<button class="chip" id="queen-${i}" data-act="queen" data-i="${i}" aria-pressed="${entry.queen===i}">${N(i)}</button>`).join("")}</div></div>
+      ${sumLine()}
+      <button class="small" data-act="moon" id="moonBtn">🌙 Someone shot the moon</button>`;
+  }
+  return `<div class="panel">
+    <div class="row"><h2 class="grow">${entry.editing!=null?"Edit hand":"Hand"} ${hIdx+1}</h2><button class="small ghost" data-act="cancel" id="cancel">Cancel</button></div>
+    ${entry.moon==null?`<p class="hint">Type each player's points. After three, the last fills in so the hand adds to 26.</p>`:""}
+    ${body}
+    ${entry.error?`<div class="err">${esc(entry.error)}</div>`:""}
+    <button class="primary" data-act="saveHand" id="saveHand">${entry.editing!=null?"Save changes":"Post hand "+(hIdx+1)}</button>
+    ${entry.editing!=null?`<button class="danger" data-act="delHand" id="delHand">${confirmKey==="del"?"Tap again to delete hand "+(hIdx+1):"Delete this hand"}</button>`:""}
+  </div>`;
+}
+function sumLine(){
+  const vals = entry.raw.map(v => /^\d+$/.test(String(v).trim()) ? +v : null);
+  const got = vals.filter(v=>v!=null).length, s = vals.reduce((a,v)=>a+(v||0),0);
+  const cls = got === 4 ? (s === 26 ? "ok" : "bad") : "";
+  const msg = got === 4 ? (s === 26 ? "26 of 26 points" : `${s} of 26 points. A hand adds up to 26.`) : `${s} of 26 points so far`;
+  return `<div class="sumline ${cls} num" id="sumline">${msg}</div>`;
+}
+function autofill(){
+  const set = entry.set;
+  const unset = [0,1,2,3].filter(i => !set[i]);
+  if (entry.auto != null){ const el = document.getElementById("pts-"+entry.auto); entry.raw[entry.auto] = ""; if (el){ el.value = ""; el.classList.remove("autofilled"); } entry.auto = null; }
+  if (unset.length === 1){
+    const i = unset[0];
+    const s = [0,1,2,3].filter(j=>j!==i).reduce((a,j)=>a+(+entry.raw[j]||0),0);
+    if (s <= 26){
+      entry.raw[i] = String(26 - s); entry.auto = i;
+      const el = document.getElementById("pts-"+i); if (el){ el.value = entry.raw[i]; el.classList.add("autofilled"); }
+    }
+  }
+  const lbls = document.querySelectorAll(".erow .auto"); lbls.forEach(l=>l.remove());
+  if (entry.auto != null){ const lab = document.querySelector(`label[for="pts-${entry.auto}"]`); if (lab) lab.insertAdjacentHTML("beforeend", `<span class="auto">auto</span>`); }
+  const sl = document.getElementById("sumline"); if (sl) sl.outerHTML = sumLine();
+}
+
+function openEntry(editIdx){
+  if (editIdx != null){
+    const h = state.hands[editIdx];
+    entry = { editing:editIdx, raw:h.pts.map(String), set:[true,true,true,true], auto:null, queen:h.queen, moon:h.moon, error:"" };
+  } else entry = { editing:null, raw:["","","",""], set:[false,false,false,false], auto:null, queen:null, moon:null, error:"" };
+  render();
+  const f = document.getElementById("pts-0"); if (f){ f.focus(); f.scrollIntoView({block:"center"}); }
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-act]"); if (!b) return;
+  const act = b.dataset.act, i = b.dataset.i != null ? +b.dataset.i : null;
+  switch(act){
+    case "start": state.players = [0,1,2,3].map(pname); state.dealer0 = state.firstDealer; state.hands = []; state.phase = "play"; entry = null; save(); render(); keepAwake(); break;
+    case "newHand": openEntry(null); break;
+    case "edit": openEntry(+b.dataset.i); break;
+    case "cancel": entry = null; render(); break;
+    case "queen": entry.queen = i; entry.error = ""; render(); break;
+    case "moon": entry.moon = entry.moon ?? 0; entry.error = ""; render(); break;
+    case "moonWho": entry.moon = i; render(); break;
+    case "noMoon": entry.moon = null; render(); break;
+    case "saveHand": {
+      let hand;
+      if (entry.moon != null){
+        hand = { pts:[0,1,2,3].map(j => j===entry.moon ? 0 : 26), queen:entry.moon, moon:entry.moon };
+      } else {
+        const bad = entry.raw.findIndex(v => !/^\d+$/.test(String(v).trim()));
+        if (bad >= 0){ entry.error = `Enter points for ${state.players[bad]} (0 if none).`; render(); break; }
+        const pts = entry.raw.map(v=>parseInt(v,10)), s = pts.reduce((a,v)=>a+v,0);
+        if (s !== 26){ entry.error = `Points add up to ${s}. A hand has 26: 13 hearts plus the Queen.`; render(); break; }
+        if (entry.queen == null){ entry.error = "Tap who took the Queen of Spades."; render(); break; }
+        if (pts[entry.queen] < 13){ entry.error = `${state.players[entry.queen]} took the Queen, so they need at least 13 points. Check the numbers.`; render(); break; }
+        if (pts[entry.queen] === 26){ entry.error = `${state.players[entry.queen]} took all 26. That's shooting the moon, so tap the moon button instead.`; render(); break; }
+        hand = { pts, queen:entry.queen, moon:null };
+      }
+      if (entry.editing != null) state.hands[entry.editing] = hand; else state.hands.push(hand);
+      entry = null; save(); render(); window.scrollTo({top:0, behavior:"smooth"}); break;
+    }
+    case "delHand": confirmThen("del", ()=>{ state.hands.splice(entry.editing,1); entry = null; save(); render(); }); break;
+    case "undo": confirmThen("undo", ()=>{ state.hands.pop(); entry = null; save(); render(); }); break;
+    case "rematch": state.hands = []; state.dealer0 = (state.dealer0 + 1) % 4; entry = null; save(); render(); break;
+    case "newsetup": state.phase = "setup"; state.hands = []; entry = null; save(); render(); break;
+    case "newgame": confirmThen("new", ()=>{ state.phase = "setup"; state.hands = []; entry = null; save(); render(); }); break;
+  }
+});
+document.addEventListener("input", e => {
+  const t = e.target;
+  if (t.dataset.name != null){
+    state.names[+t.dataset.name] = t.value; save();
+    const sel = document.getElementById("first-dealer"); if (sel && sel.options[+t.dataset.name]) sel.options[+t.dataset.name].textContent = pname(+t.dataset.name);
+  }
+  if (t.dataset.pts != null && entry){
+    const i = +t.dataset.pts, clean = t.value.replace(/\D/g,"");
+    if (clean !== t.value) t.value = clean;
+    entry.raw[i] = clean; entry.set[i] = clean !== ""; entry.error = "";
+    if (entry.auto === i){ entry.auto = null; t.classList.remove("autofilled"); }
+    if (entry.editing == null) autofill(); else { const sl = document.getElementById("sumline"); if (sl) sl.outerHTML = sumLine(); }
+    const er = document.querySelector(".err"); if (er) er.remove();
+  }
+});
+document.addEventListener("change", e => { if (e.target.id === "first-dealer"){ state.firstDealer = +e.target.value; save(); } });
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter" && e.target.dataset.pts != null){
+    e.preventDefault();
+    const nx = document.getElementById("pts-" + (+e.target.dataset.pts + 1));
+    if (nx && !nx.classList.contains("autofilled")) nx.focus(); else e.target.blur();
+  }
+});
+
+render();
+keepAwake();
+</script>
+</body>
+</html>
